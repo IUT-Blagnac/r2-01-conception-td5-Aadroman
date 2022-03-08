@@ -174,3 +174,5 @@ image::images/issues.png["Diagramme d'UC",width=70%"]
 
 - Un fichier `uc.plantuml` à la racine de votre projet, contenant votre diagramme des UC.
 - Un fichier `dc.plantuml` à la racine de votre projet, contenant votre diagramme de classes (final).
+
+test
