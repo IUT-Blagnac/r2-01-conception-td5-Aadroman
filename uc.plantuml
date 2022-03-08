@@ -1,0 +1,33 @@
+---
+Exercices : Diagramme des UC de l'entreprise de chantier
+---
+```plantuml
+
+@startuml
+
+usecase c as "Gérer ses chantiers"
+usecase g as "Gérer ses artisans"
+usecase a as "Affectation des artisans"
+usecase s as "Calculer salaire des artisans"
+
+actor Direction
+actor RessourcesHumaines
+actor Comptable
+
+'Pour aligner les 2 acteurs :
+a -[hidden]-> g
+s -[hidden]-> a
+
+Direction -> c
+Direction -> a
+
+RessourcesHumaines -> g
+
+
+Comptable -> s
+
+
+
+@enduml
+
+```

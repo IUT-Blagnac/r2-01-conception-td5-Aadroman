@@ -1,0 +1,24 @@
+```plantuml
+
+@startuml
+
+class Direction{
+    - idDirection : String 
+}
+
+class RessourcesHumaines{
+    - idRH : String 
+}
+
+class Comptable {
+    - idComptable : String
+}
+
+class Artisan{
+    - idArtisan : String
+}
+
+
+@enduml
+
+```
