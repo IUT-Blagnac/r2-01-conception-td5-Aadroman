@@ -1,0 +1,92 @@
+```plantuml
+
+@startuml
+
+hide circle
+hide empty members
+hide empty methods
+
+skinparam classAttributeIconSize 0
+
+skinparam roundcorner 5
+
+skinparam class {
+    BackgroundColor AliceBlue
+    BorderColor DarkSlateGray
+    ArrowColor Black
+    FontColor Black
+    FontSize 12
+    FontName Helvetica
+}
+
+skinparam arrow {
+    MessageAlign center
+}
+
+
+class Direction{
+    - idDirection : String 
+    + nom : String
+    + prenom : String
+
+    login(user,pass)
+    setAffectation()
+}
+
+class RessourcesHumaines{
+    - idRH : String 
+    + nom : String
+    + prenom : String
+
+    login(user,pass)
+     virementSalaire()
+}
+
+class Comptable {
+    - idComptable : String
+    + nom : String
+    + prenom : String
+
+    login(user,pass)
+    calculSalaire()
+}
+
+class Artisan{
+    - idArtisan : String
+    + nom : String
+    + prenom : String
+    - idAffectation : String
+    - salaire : double
+    - coordonnes : String
+
+    getAffectation()
+}
+
+class Chantier{
+    - idChantier : String
+    + dateDebut : Date
+    + dateFin : Date
+    + adresse : String
+
+    getArtisan()
+}
+
+Direction "1" -- "1..*" Artisan : Emploie/Affecte
+Direction "1" -- "1..*" RessourcesHumaines : Emploie
+Direction "1" -- "1..*" Comptable : Emploie
+Direction "1" -- "1..*" Chantier : Gérer
+
+RessourcesHumaines "1" -- "*" Artisan : Gérer
+RessourcesHumaines "1" -- "*" Comptable : Gérer
+
+Comptable "*" -- "1" Artisan : Calcul du salaire
+Comptable "*" -- "1" Direction : Calcul du salaire
+Comptable "*" -- "1" RessourcesHumaines : Calcul du salaire
+
+Artisan "*" -- "*" Chantier : Est affecté
+
+
+
+@enduml
+
+```

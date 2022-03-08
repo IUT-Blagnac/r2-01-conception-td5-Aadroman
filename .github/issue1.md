@@ -1,21 +1,22 @@
----
-title: Exercice 1 : Diagramme des UC en plantUML ({{ date | date('dddd, MMMM Do') }})
----
-En vous inspirant du code suivant (pour ne pas démarrer à vide), réalisez un diagramme des UC correspondant au sujet.
-```plantuml
-@startuml
+    ---
+    title: Exercice 1 : Diagramme des UC en plantUML ({{ date | date('dddd, MMMM Do') }})
+    ---
+    En vous inspirant du code suivant (pour ne pas démarrer à vide), réalisez un diagramme des UC correspondant au sujet.
+    ```plantuml
+    @startuml
 
-usecase r as "Recenser les \n demandes de stage"
-usecase d as "Déclarer une \n demande de stage"
+    usecase r as "Recenser les \n demandes de stage"
+    usecase d as "Déclarer une \n demande de stage"
 
-actor Responsable
-actor Entreprise 
+    actor Responsable
 
-'Pour aligner les 2 acteurs :
-r -[hidden]-> d
+    actor Entreprise 
 
-Responsable -> r
-Entreprise -> d
+    'Pour aligner les 2 acteurs :
+    r -[hidden]-> d
 
-@enduml
-```
+    Responsable -> r
+    Entreprise -> d
+
+    @enduml
+    ```
