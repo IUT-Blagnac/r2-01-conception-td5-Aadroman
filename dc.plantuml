@@ -38,15 +38,20 @@ class Comptable {
 
 class Artisan{
     - idArtisan : String
+    - salaire : double
+    - coordonnes : String
 }
 
 class Chantier{
-
+    + dateDebut : String
+    + dateFin : String
+    + adresse : String
 }
 
 Direction "1" -- "1..*" Artisan : Possède
-Entreprise "1" -- "*" Chantier : Gérer
+RessourcesHumaines "1" -- "*" Chantier : Gérer
 Artisan "*" -- "*" Chantier : Affecter
+Comptable "*" -- "1" Artisan : Calcul du salaire
 
 
 
