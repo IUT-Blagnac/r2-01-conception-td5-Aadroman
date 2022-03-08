@@ -83,7 +83,7 @@ Comptable "*" -- "1" Artisan : Calcul du salaire
 Comptable "*" -- "1" Direction : Calcul du salaire
 Comptable "*" -- "1" RessourcesHumaines : Calcul du salaire
 
-Artisan "*" -- "*" Chantier : Est affecté
+Artisan "*" -- "*" Chantier : Est affecté(e)
 
 
 
