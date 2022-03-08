@@ -2,6 +2,28 @@
 
 @startuml
 
+hide circle
+hide empty members
+hide empty methods
+
+skinparam classAttributeIconSize 0
+
+skinparam roundcorner 5
+
+skinparam class {
+    BackgroundColor AliceBlue
+    BorderColor DarkSlateGray
+    ArrowColor Black
+    FontColor Black
+    FontSize 12
+    FontName Helvetica
+}
+
+skinparam arrow {
+    MessageAlign center
+}
+
+
 class Direction{
     - idDirection : String 
 }
@@ -17,6 +39,15 @@ class Comptable {
 class Artisan{
     - idArtisan : String
 }
+
+class Chantier{
+
+}
+
+Direction "1" -- "1..*" Artisan : Possède
+Entreprise "1" -- "*" Chantier : Gérer
+Artisan "*" -- "*" Chantier : Affecter
+
 
 
 @enduml
